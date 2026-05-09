@@ -51,5 +51,10 @@
   },
   "links": {
   "upgradePrompt": "http://localhost:8765"
-}
+  },
+  "contacts": [
+  { "label": "Telegram nhóm", "url": "https://t.me/..." },
+  { "label": "Discord", "url": "https://discord.com/..." },
+  { "label": "YouTube", "url": "https://youtube.com/..." }
+]
 }
