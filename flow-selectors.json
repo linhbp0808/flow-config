@@ -48,5 +48,8 @@
 
   "pickerDialog": {
     "containers": ["[role=\"dialog\"]", "[aria-modal=\"true\"]", "[class*=\"modal\"]", "[class*=\"popover\"]", "[class*=\"picker\"]"]
-  }
+  },
+  "links": {
+  "upgradePrompt": "http://localhost:8765"
+}
 }
