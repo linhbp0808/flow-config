@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
   "updatedAt": "2026-05-20",
-  "_comment": "Flow Studio remote selectors v2. Phase 1: externalized all obfuscated class selectors. Push commit lên repo → extension auto-fetch.",
+  "_comment": "Flow Studio remote selectors v2. Phase 2: externalized prompt editor selectors. Push commit lên repo → extension auto-fetch.",
 
   "panel": {
     "qtyRegex": "x[1-4]|[1-4]x",
@@ -46,7 +46,13 @@
 
   "editor": {
     "promptCaret": "#__next > div > div > div > div > div > div",
-    "slateVerify": "p[data-slate-node=\"element\"] span[data-slate-string=\"true\"]"
+    "slateVerify": "p[data-slate-node=\"element\"] span[data-slate-string=\"true\"]",
+    "editorSelectors": [
+      "[data-slate-editor=\"true\"][contenteditable=\"true\"]",
+      "[role=\"textbox\"][contenteditable=\"true\"]",
+      "[role=\"textbox\"]",
+      "div[contenteditable]"
+    ]
   },
 
   "scroller": {
@@ -66,10 +72,6 @@
     "tabKeywords": ["Hình ảnh", "image", "images", "photo", "media", "asset"]
   },
 
-  "voicePicker": {
-    "optionRoles": ["[role=\"option\"]", "[role=\"listitem\"]", "[role=\"button\"]", "[role=\"row\"]", "[role=\"menuitem\"]"]
-  },
-
   "searchInput": {
     "placeholders": ["Tìm kiếm", "Tìm", "Search", "search", "voice", "giọng", "thành phần", "Find"],
     "fallbackSelectors": ["input[type=\"search\"]", "input[type=\"text\"]"]
@@ -80,7 +82,7 @@
   },
 
   "links": {
-    "upgradePrompt": "http://localhost:8765"
+    "upgradePrompt": "https://promptveo.spam.pro.vn/"
   },
 
   "contacts": [
