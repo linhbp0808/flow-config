@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "updatedAt": "2026-05-08",
-  "_comment": "Flow Studio remote selectors. Push commit lên repo → user fetch sau 24h (hoặc bấm Refresh) sẽ nhận update. KHÔNG cần build extension lại.",
+  "version": "2.0.0",
+  "updatedAt": "2026-05-20",
+  "_comment": "Flow Studio remote selectors v2. Phase 1: externalized all obfuscated class selectors. Push commit lên repo → extension auto-fetch.",
 
   "panel": {
     "qtyRegex": "x[1-4]|[1-4]x",
@@ -18,16 +18,45 @@
     "outputItems": "[data-tile-id]",
     "tileById": "[data-tile-id=\"{tileId}\"]",
     "tileEditLink": "[data-tile-id=\"{tileId}\"] a[href*=\"/edit/\"]",
-    "editLinkAny": "a[href*=\"/edit/\"]"
+    "editLinkAny": "a[href*=\"/edit/\"]",
+    "completedVideo": "video[src]",
+    "completedImage": "img[src]:not([src*=\"svg\"])",
+    "buttonVideo": "button video[src]"
   },
 
   "skeletons": {
-    "containers": "div.bqNkKb, div[class*=\"sc-55ebc859-2\"]"
+    "containers": "div.bqNkKb, div[class*=\"sc-55ebc859-2\"]",
+    "parentWrapper": "div[class*=\"sc-55ebc859-0\"]",
+    "legacyProgress": "div.bqNkKb > div, div.sc-55ebc859-2 > div, div.sc-55ebc859-7"
+  },
+
+  "submitButton": {
+    "classSelector": "button.sc-e5032833-5",
+    "composerClasses": [".sc-e5032833-0", "[class*=\"sc-e5032833\"]"],
+    "iconSelector": "button i.google-symbols, button i, button span"
+  },
+
+  "fileUpload": {
+    "buttonSelectors": [
+      "div[class*=\"sc-84e494b2\"] > button",
+      ".hyuxjz button",
+      ".ckCGSv > button"
+    ]
+  },
+
+  "editor": {
+    "promptCaret": "#__next > div > div > div > div > div > div",
+    "slateVerify": "p[data-slate-node=\"element\"] span[data-slate-string=\"true\"]"
+  },
+
+  "scroller": {
+    "primary": "[data-virtuoso-scroller]",
+    "fallbacks": ["[class*=\"virtuoso\"]", "main", "[class*=\"sc-8rc14b4\"]", "[role=\"main\"]"]
   },
 
   "icons": {
     "submitArrow": ["arrow_forward", "send"],
-    "addImage": ["add_2"],
+    "addImage": ["add_2", "add"],
     "download": ["download"],
     "modelDropdown": ["arrow_drop_down", "expand_more"],
     "cropAspect": ["crop_landscape", "crop_portrait", "crop_square", "crop_16_9", "crop_9_16"]
@@ -49,12 +78,13 @@
   "pickerDialog": {
     "containers": ["[role=\"dialog\"]", "[aria-modal=\"true\"]", "[class*=\"modal\"]", "[class*=\"popover\"]", "[class*=\"picker\"]"]
   },
+
   "links": {
-  "upgradePrompt": "http://localhost:8765"
+    "upgradePrompt": "http://localhost:8765"
   },
+
   "contacts": [
-  { "label": "Telegram nhóm", "url": "https://t.me/..." },
-  { "label": "Discord", "url": "https://discord.com/..." },
-  { "label": "YouTube", "url": "https://youtube.com/..." }
-]
+    { "label": "Telegram nhóm", "url": "https://t.me/Flowstudiobatchmanager" },
+    { "label": "Discord", "url": "https://discord.com/invite/WH2csC6ut3" }
+  ]
 }
