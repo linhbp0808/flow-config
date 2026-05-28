@@ -73,8 +73,22 @@
   },
 
   "searchInput": {
-    "placeholders": ["Tìm kiếm", "Tìm", "Search", "search", "voice", "giọng", "thành phần", "Find"],
-    "fallbackSelectors": ["input[type=\"search\"]", "input[type=\"text\"]"]
+    "placeholders": [],
+    "fallbackSelectors": [
+      "[role=\"dialog\"] input[placeholder*=\"Tìm\"]",
+      "[role=\"dialog\"] input[placeholder*=\"Search\"]",
+      "[role=\"dialog\"] input",
+      "[aria-modal=\"true\"] input[placeholder*=\"Tìm\"]",
+      "[aria-modal=\"true\"] input[placeholder*=\"Search\"]",
+      "[aria-modal=\"true\"] input",
+      "[class*=\"popover\"] input[placeholder*=\"Tìm\"]",
+      "[class*=\"popover\"] input[placeholder*=\"Search\"]",
+      "[class*=\"popover\"] input",
+      "[class*=\"modal\"] input",
+      "[class*=\"picker\"] input",
+      "input[placeholder*=\"voice\"]",
+      "input[placeholder*=\"giọng\"]"
+    ]
   },
 
   "pickerDialog": {
@@ -82,7 +96,7 @@
   },
 
   "links": {
-    "upgradePrompt": "https://promptveo.spam.pro.vn/"
+    "upgradePrompt": "http://localhost:8765"
   },
 
   "contacts": [
