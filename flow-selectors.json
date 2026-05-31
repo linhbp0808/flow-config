@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0",
-  "updatedAt": "2026-05-20",
-  "_comment": "Flow Studio remote selectors v2. Phase 2: externalized prompt editor selectors. Push commit lên repo → extension auto-fetch.",
+  "version": "2.1.0",
+  "updatedAt": "2026-05-31",
+  "_comment": "Flow Studio remote selectors. v2.1: thêm khối 'gemini' (selector cho gemini.google.com) — khi Google đổi DOM chỉ cần sửa file này rồi push, không phải build lại tiện ích.",
 
   "panel": {
     "qtyRegex": "x[1-4]|[1-4]x",
@@ -55,6 +55,58 @@
     ]
   },
 
+  "gemini": {
+    "_comment": "Selector cho gemini.google.com. Khi Gemini đổi DOM, chỉ sửa các mảng dưới đây. Thứ tự trong mảng = ưu tiên thử trước.",
+    "newChatUrl": "https://gemini.google.com/app",
+    "editorSelectors": [
+      ".ql-editor[role=\"textbox\"]",
+      ".ql-editor",
+      "[contenteditable=\"true\"][role=\"textbox\"]",
+      "[contenteditable=\"true\"]",
+      "textarea"
+    ],
+    "sendButtonSelectors": [
+      "button.send-button",
+      "[aria-label*=\"Send\"]",
+      "[aria-label*=\"Gửi\"]"
+    ],
+    "stopSelectors": [
+      "[data-mat-icon-name=\"stop\"]",
+      "[fonticon=\"stop\"]",
+      "mat-icon[fonticon=\"stop\"]",
+      "button.send-button.stop",
+      "[aria-label*=\"Stop\"]",
+      "[aria-label*=\"Dừng\"]",
+      "[class*=\"stop-button\"]"
+    ],
+    "doneFooterSelectors": [
+      "message-actions",
+      ".response-container-footer",
+      "[data-test-id=\"copy-button\"]",
+      "[data-test-id=\"regenerate-button\"]",
+      "[data-test-id=\"thumb-up-button\"]",
+      "copy-button"
+    ],
+    "turnSelectors": [
+      "model-response",
+      ".model-response-text",
+      "message-content",
+      "[class*=\"model-response\"]"
+    ],
+    "codeBlockSelectors": [
+      "code-block",
+      "pre code",
+      ".code-block code"
+    ],
+    "uploadDropSelectors": [
+      ".input-area",
+      ".text-input-field",
+      ".ql-editor",
+      "[contenteditable=\"true\"]"
+    ],
+    "thumbnailSelector": "[class*=\"file\"] img, [class*=\"upload\"] img, [class*=\"attachment\"] img, [class*=\"preview\"] img, [class*=\"thumbnail\"] img, [class*=\"chip\"] img"
+  },
+
   "scroller": {
     "primary": "[data-virtuoso-scroller]",
     "fallbacks": ["[class*=\"virtuoso\"]", "main", "[class*=\"sc-8rc14b4\"]", "[role=\"main\"]"]
@@ -94,17 +146,6 @@
   "pickerDialog": {
     "containers": ["[role=\"dialog\"]", "[aria-modal=\"true\"]", "[class*=\"modal\"]", "[class*=\"popover\"]", "[class*=\"picker\"]"]
   },
-  "gemini": {
-  "newChatUrl": "https://gemini.google.com/app",
-  "editorSelectors": [ ".ql-editor[role=\"textbox\"]", "...", "textarea" ],
-  "sendButtonSelectors": [ "button.send-button", "[aria-label*=\"Send\"]", "[aria-label*=\"Gửi\"]" ],
-  "stopSelectors": [ "[data-mat-icon-name=\"stop\"]", "[fonticon=\"stop\"]", "..." ],   ← đang trả lời
-  "doneFooterSelectors": [ "message-actions", "[data-test-id=\"copy-button\"]", "..." ], ← đã xong
-  "turnSelectors": [ "model-response", "message-content", "..." ],
-  "codeBlockSelectors": [ "code-block", "pre code", "..." ],
-  "uploadDropSelectors": [ "..." ],
-  "thumbnailSelector": "[class*=\"file\"] img, ..."
-}
 
   "links": {
     "upgradePrompt": "http://localhost:8765"
