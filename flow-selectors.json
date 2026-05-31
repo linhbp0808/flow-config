@@ -94,6 +94,17 @@
   "pickerDialog": {
     "containers": ["[role=\"dialog\"]", "[aria-modal=\"true\"]", "[class*=\"modal\"]", "[class*=\"popover\"]", "[class*=\"picker\"]"]
   },
+  "gemini": {
+  "newChatUrl": "https://gemini.google.com/app",
+  "editorSelectors": [ ".ql-editor[role=\"textbox\"]", "...", "textarea" ],
+  "sendButtonSelectors": [ "button.send-button", "[aria-label*=\"Send\"]", "[aria-label*=\"Gửi\"]" ],
+  "stopSelectors": [ "[data-mat-icon-name=\"stop\"]", "[fonticon=\"stop\"]", "..." ],   ← đang trả lời
+  "doneFooterSelectors": [ "message-actions", "[data-test-id=\"copy-button\"]", "..." ], ← đã xong
+  "turnSelectors": [ "model-response", "message-content", "..." ],
+  "codeBlockSelectors": [ "code-block", "pre code", "..." ],
+  "uploadDropSelectors": [ "..." ],
+  "thumbnailSelector": "[class*=\"file\"] img, ..."
+}
 
   "links": {
     "upgradePrompt": "http://localhost:8765"
